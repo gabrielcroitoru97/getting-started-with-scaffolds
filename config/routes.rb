@@ -5,19 +5,20 @@ Rails.application.routes.draw do
   # CREATE
   post("/movies", { :controller => "movies", :action => "create" })
   get("/movies/new", {:controller => "movies", :action =>"new"})
+  get("/movies/with_errors",{:controller => "movies", :action =>"new"})
           
   # READ
   get("/movies", { :controller => "movies", :action => "index" })
   
-  get("/movies/:path_id", { :controller => "movies", :action => "show" })
+  get("/movies/:id", { :controller => "movies", :action => "show" })
   
   # UPDATE
   
-  patch("/movies/:path_id", { :controller => "movies", :action => "update" })
-  get("movies/:path_id/edit",{:controller=>"movies",:action=>"edit"})
+  patch("/movies/:id", { :controller => "movies", :action => "update" })
+  get("movies/:id/edit",{:controller=>"movies",:action=>"edit"})
   
   # DELETE
-  delete("/movies/:path_id", { :controller => "movies", :action => "destroy" })
+  delete("/movies/:id", { :controller => "movies", :action => "destroy" })
 
   #------------------------------
 
